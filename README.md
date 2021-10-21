@@ -3,9 +3,9 @@
 
 ## Python Basics
 data types:
-    * string
-    * int
+* string
+* int
 
 
 # git
-print
+`print`
