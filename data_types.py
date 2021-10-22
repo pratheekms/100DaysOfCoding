@@ -35,3 +35,19 @@ myorder='i want {} and {}'
 print(myorder.format('burger','fries'))
 
 print('end for day 2')
+
+
+# remove duplicate items/numbers in list
+
+list1=[1,2,3,4,5,3,4,5,6,7,8,5,6,3,9]
+list1.sort()
+sorted_list=sorted(list1)
+print(list1)
+print(sorted_list)
+res_list=[]
+[res_list.append(x) for x in list1 if x not in res_list]
+print('list without duplicates:',res_list)
+for i in list1:
+    if i not in list1:
+        res_list.append(i)
+print(res_list)
