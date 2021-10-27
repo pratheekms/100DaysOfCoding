@@ -8,3 +8,7 @@ add_s='Sum of {} and {} is {}'
 sub_s='Difference between {} and {} is {}'
 print(add_s.format(4,5,add_func(4,5)))
 print(sub_s.format(10,5,sub_func(10,5)))
+
+
+new_list=list(('pratheek',25,'banglore')) #list constructor
+print(new_list)

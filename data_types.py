@@ -48,6 +48,6 @@ res_list=[]
 [res_list.append(x) for x in list1 if x not in res_list]
 print('list without duplicates:',res_list)
 for i in list1:
-    if i not in list1:
+    if i not in res_list:
         res_list.append(i)
 print(res_list)
