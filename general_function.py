@@ -21,3 +21,4 @@ my_dict={'john':20,'mark':25,'jake':35,'amy':32,'rachel':23}
 for name,age in my_dict.items():
     # print(name, age)
     print(new_func2(name,age))
+#check for dict update
