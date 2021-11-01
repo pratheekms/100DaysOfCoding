@@ -5,6 +5,8 @@
 data types:
 * string
 * int
+1. BOOL
+2. float
 
 
 # git
