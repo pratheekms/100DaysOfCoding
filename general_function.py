@@ -22,3 +22,6 @@ for name,age in my_dict.items():
     # print(name, age)
     print(new_func2(name,age))
 #check for dict update
+
+def new_func3(place:str)->str:
+    pass
