@@ -46,3 +46,4 @@ print(stringl)
 l4=[1,2,3,4,5,6,7,8,9,0]
 s4=['even' if num%2==0 else 'odd' for num in l4]
 print(s4)
+print(stringl)
