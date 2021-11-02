@@ -5,3 +5,5 @@ def print_name(name: str)->None:
 
 print_name('pratheek')
 print(type('a'))
+
+print('Hi from Ubuntu')
