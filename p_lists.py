@@ -40,5 +40,9 @@ print(newl1,cpnewl1,newl3)
 cpnewl1.append('string')
 stringl=[x.upper() for x in cpnewl1 if x=='string']
 print(stringl)
-27886811+pratheekms@users.noreply.github.com
-27886811+pratheekms@users.noreply.github.com
+
+#test list comprehension with if
+
+l4=[1,2,3,4,5,6,7,8,9,0]
+s4=['even' if num%2==0 else 'odd' for num in l4]
+print(s4)
