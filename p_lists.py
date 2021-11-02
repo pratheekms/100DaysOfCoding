@@ -37,3 +37,6 @@ cpnewl1=newl1.copy()
 newl3=newl1
 newl1.clear()
 print(newl1,cpnewl1,newl3)
+cpnewl1.append('string')
+stringl=[x.upper() for x in cpnewl1 if x=='string']
+print(stringl)
