@@ -18,3 +18,22 @@ slist.sort(key=str.lower)
 print(slist)
 
 print('list')
+
+newl1=[1,2,3]
+newl1.append(4)
+newl2=[5,6,'7']
+newl1.extend(newl2)
+print(newl1)
+newtp=('1',2,'string')
+newl1.extend(newtp)
+print(newl1)
+print('converting list {} to tuple:{}'.format(newl1,tuple(newl1)))
+
+print(newl1)
+newl1.pop()
+newl1.pop(4)
+del newl1[3]
+cpnewl1=newl1.copy()
+newl3=newl1
+newl1.clear()
+print(newl1,cpnewl1,newl3)
