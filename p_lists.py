@@ -40,3 +40,5 @@ print(newl1,cpnewl1,newl3)
 cpnewl1.append('string')
 stringl=[x.upper() for x in cpnewl1 if x=='string']
 print(stringl)
+27886811+pratheekms@users.noreply.github.com
+27886811+pratheekms@users.noreply.github.com
