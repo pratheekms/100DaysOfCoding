@@ -59,3 +59,18 @@ print(tp3)
 #creating tuple with only one item
 twithoneitem=('one',)
 print(type(twithoneitem))
+
+
+#tuple unpacking
+t4=(1,2,3,4)
+(one,two,three,four)=t4
+print(two)
+t5=(1,2,3,4,5,6,7)
+#using * will unpack all the rest of the items as list
+(one,*two)=t5
+print(two)
+
+# you can use * anywhere
+(one,*two,three)=t5
+print(two,three)
+
