@@ -47,3 +47,30 @@ l4=[1,2,3,4,5,6,7,8,9,0]
 s4=['even' if num%2==0 else 'odd' for num in l4]
 print(s4)
 print(stringl)
+
+#changing tuple to list and change the value and change it back to tuple
+
+tp3=(1,2,3,4,5)
+l3=list(tp3)
+l3[2]=9
+tp3=tuple(l3)
+print(tp3)
+
+#creating tuple with only one item
+twithoneitem=('one',)
+print(type(twithoneitem))
+
+
+#tuple unpacking
+t4=(1,2,3,4)
+(one,two,three,four)=t4
+print(two)
+t5=(1,2,3,4,5,6,7)
+#using * will unpack all the rest of the items as list
+(one,*two)=t5
+print(two)
+
+# you can use * anywhere
+(one,*two,three)=t5
+print(two,three)
+
