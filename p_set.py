@@ -10,3 +10,16 @@ s2=set(l1)
 print('set:{}'.format(s1))
 
 
+s2.add(10)
+print(s2)
+print(s2)
+
+s2.remove(10)
+print(s2)
+
+#remove item in sets, discard and remove
+
+#discard wont through error if the item is not found
+#but remove in throguh an error if item not found
+s2.discard(10)
+print(s2)
