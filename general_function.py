@@ -24,4 +24,4 @@ for name,age in my_dict.items():
 #check for dict update
 
 def new_func3(place:str)->str:
-    pass
+    return place
