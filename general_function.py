@@ -27,3 +27,4 @@ def new_func3(place:str)->str:
     return place
 
 print(new_func3('banglore'))
+print(new_func3('newyork'))
