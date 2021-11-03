@@ -25,3 +25,5 @@ for name,age in my_dict.items():
 
 def new_func3(place:str)->str:
     return place
+
+print(new_func3('banglore'))
