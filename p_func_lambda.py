@@ -17,6 +17,13 @@ def fkwargs(**k1):
 fargs('one','two','three')
 fkwargs(name='myname',place='myplace')
 
+#lambda, can have any number of arguments but only one expression
+#parameter: inside ()
+#arguments: value pass to the function
 
+x=lambda x:x+5
+print(x(5))
 
+y=lambda a,b:a*b
+print(y(4,4))
 
