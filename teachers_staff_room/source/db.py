@@ -11,3 +11,4 @@ def create_conn(db_name:str)->mysql.connector:
                            user=dbconfig.DATABASE_CONFIG['user'],
                            password=dbconfig.DATABASE_CONFIG['password'],
                            db=dbconfig.DATABASE_CONFIG['dbname'])
+    return conn
