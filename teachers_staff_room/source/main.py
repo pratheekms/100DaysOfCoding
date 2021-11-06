@@ -1,5 +1,6 @@
 # main program
 
+from typing import Optional
 import db
 
 t_db=db.create_conn('teachersstaffroom')
@@ -55,13 +56,45 @@ def view_teacher_info():
             print(col+': '+str(val))
     else:
         print('Record does not exists for Teacher ID: {}'.format(teacher_id))
+    user_choice=str(input('Do you want to modify the details?(y/n)'))
+    if user_choice.lower()=='y':
+        modify_teacher_info()
+    else:
+        exit(0)
 
-def modify_teacher_info():
+
+def modify_teacher_info(teacher_id=None):
     print('in modify_teacher_info')
+    if teacher_id is None:
+        teacher_id=int(input('enter teacher id: '))
+    col_names=db.get_column_names(t_db)
+    print("Please select the operation")
+    for i,op in enumerate(col_names):
+        print(str(i+1)+'. '+op)
+    user_option=int(input('Please select an option: '))
+    print('you have selected:'+(col_names[user_option-1]))
+
+    new_val=input('enter new value to {}'.format(col_names[user_option-1]))
+    db.update_teacher_record(t_db,col_names[user_option-1],new_val,teacher_id)
+    u_choice=str(input('do you want to update another field?(y/n)'))
+    while u_choice.lower() not in ("yes","no","y","n"):
+        u_choice=str(input('do you want to update another field?(y/n)'))
+    if u_choice.lower()=='y':
+        modify_teacher_info(teacher_id)
+    elif u_choice.lower()=='n':
+        teacher_details=db.view_teacher_details(t_db,teacher_id)
+        if teacher_details:
+            print('Teacher Details after modification:')
+            for col,val in teacher_details[0].items():
+                print(col+': '+str(val))
+
 
 def delete_teacher():
     print('in delete_teacher')
 
 if __name__=='__main__':
     # main()
-    view_teacher_info()
+    # view_teacher_info()
+    modify_teacher_info()
+    # db.get_column_names(t_db)
+    t_db.close()

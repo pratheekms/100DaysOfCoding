@@ -32,6 +32,7 @@ def print_table_data(db_conn:mysql.connector)->None:
     print('Printing database records:->')
     for x in myresult:
         print(x)
+    
 
 
 def insert_new_record(db_conn, u_input):
@@ -62,6 +63,14 @@ def view_teacher_details(db_conn,teacher_id):
     else:
         return None
 
+def update_teacher_record(db_conn,col_name,new_val,t_id):
+    sql="UPDATE teachers SET {}=%s WHERE id=%s".format(col_name)
+    val=(new_val,t_id,)
+    mycursor=db_conn.cursor()
+    mycursor.execute(sql,val)
+    db_conn.commit()
+    mycursor.close()
+    print(mycursor.rowcount,"record updated")
 
 
 
@@ -77,6 +86,19 @@ def validate_teache_id(db_conn,teacher_id):
         return False
     else:
         return True
+
+def get_column_names(db_conn):
+        sql="select * from teachers"
+        
+        mycursor=db_conn.cursor()
+        mycursor.execute(sql)
+        # record=mycursor.fetchone()
+    
+        col_names=list(map(lambda x:x[0], mycursor.description))
+        # mycursor.close()
+        # print(col_names)
+        mycursor.reset()
+        return col_names
 
 
 
