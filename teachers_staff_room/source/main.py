@@ -27,6 +27,7 @@ def main():
 
 
 def add_teacher_info(t_db):
+    print('Please enter new teacher details below')
     # print('in add_teacher_info')
     # teacher_dict={'fname':'','lname':'',
     # 'gender':'','title':'','qualification':'','primary_subjet':'','seconday_subject':'','phno':'','email_id':''
@@ -34,7 +35,7 @@ def add_teacher_info(t_db):
     # print(teacher_dict)
     teacher_dict={}
     col_names=db.get_column_names(t_db)
-    for col in col_names:
+    for col in col_names[1:]:
         teacher_dict[col]=str(input('enter '+col+': '))
     # for key in teacher_dict.keys():
     #     teacher_dict[key]=str(input('enter '+key+': '))
@@ -61,7 +62,7 @@ def view_teacher_info():
         print('Record does not exists for Teacher ID: {}'.format(teacher_id))
     user_choice=str(input('Do you want to modify the details?(y/n)'))
     if user_choice.lower()=='y':
-        modify_teacher_info()
+        modify_teacher_info(teacher_id)
     else:
         exit(0)
 
