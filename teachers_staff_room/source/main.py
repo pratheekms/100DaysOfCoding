@@ -43,14 +43,14 @@ def add_teacher_info(t_db):
     new_teacher_id=db.insert_new_record(t_db,user_input)
     # print('printing table data:')
     # db.print_table_data(t_db)
-    print('New teacher {} created with ID: {}.'.format(teacher_dict['fname'],new_teacher_id))
+    print('New teacher {} created with ID: {}.'.format(teacher_dict['first_name'],new_teacher_id))
 
     # print(tp)
 
 
 
 def view_teacher_info():
-    print('in view_teacher_info')
+    # print('in view_teacher_info')
     teacher_id=int(input('enter teacher ID: '))
     teacher_details=db.view_teacher_details(t_db,teacher_id)
     if teacher_details:
@@ -67,7 +67,7 @@ def view_teacher_info():
 
 
 def modify_teacher_info(teacher_id=None):
-    print('in modify_teacher_info')
+    # print('in modify_teacher_info')
     if teacher_id is None:
         teacher_id=int(input('enter teacher id: '))
     col_names=db.get_column_names(t_db)
@@ -93,10 +93,10 @@ def modify_teacher_info(teacher_id=None):
 
 
 def delete_teacher():
-    print('in delete_teacher')
+    # print('in delete_teacher')
     teacher_id=str(input('enter teacher id: '))
     record_to_be_deleted=db.view_teacher_details(t_db,teacher_id)
-    print(record_to_be_deleted)
+    # print(record_to_be_deleted)
     if record_to_be_deleted:
         print('Teacher Details:')
         for col,val in record_to_be_deleted[0].items():
@@ -110,12 +110,10 @@ def delete_teacher():
     else:
         print('Record does not exists for Teacher ID: {}'.format(teacher_id))
 
-
-
 if __name__=='__main__':
-    # main()
+    main()
     # view_teacher_info()
     # modify_teacher_info()
     # db.get_column_names(t_db)
-    delete_teacher()
+    # delete_teacher()
     t_db.close()
