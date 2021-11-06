@@ -42,11 +42,11 @@ for x in mycursor:
 
 # sql="ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY"
 
-# sql='INSERT INTO customers (name,address) VALUES ( %s,%s)'
-# val=('cena','canada')
-# mycursor.execute(sql,val)
-# db.commit()
-# print(mycursor.rowcount,"record inserted")
+sql='INSERT INTO customers (name,address) VALUES ( %s,%s)'
+val=('cena','india')
+mycursor.execute(sql,val)
+db.commit()
+print(mycursor.rowcount,"record inserted")
 
 # excetuce many, for multiple insert
 # sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
@@ -72,12 +72,17 @@ for x in mycursor:
 
 # print(mycursor.rowcount, "was inserted.") 
 
-sql="select * from customers"
+# sql="select * from customers"
+sql="select LAST_INSERT_ID()"
 mycursor.execute(sql)
+tid=mycursor.fetchone()
+print(tid)
+
+# mycursor.execute(sql)
 # myresult=mycursor.fetchall()
-myresult=mycursor.fetchone()
-for x in myresult:
-    print(x)
+# # myresult=mycursor.fetchone()
+# for x in myresult:
+#     print(x)
 
 # sql = "SELECT * FROM customers WHERE name =%s"
 # # adr = ("Yellow Garden 2", )
