@@ -69,10 +69,17 @@ def update_teacher_record(db_conn,col_name,new_val,t_id):
     mycursor=db_conn.cursor()
     mycursor.execute(sql,val)
     db_conn.commit()
-    mycursor.close()
+    # mycursor.close()
     print(mycursor.rowcount,"record updated")
 
 
+def delete_teacher(db_conn,teacher_id):
+    sql="DELETE FROM teachers WHERE id=%s"
+    val=(teacher_id,)
+    mycursor=db_conn.cursor()
+    mycursor.execute(sql,val)
+    db_conn.commit()
+    print(mycursor.rowcount,"record deleted")
 
 
 def validate_teache_id(db_conn,teacher_id):
