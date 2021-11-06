@@ -28,6 +28,16 @@ def main():
 
 def add_teacher_info():
     print('in add_teacher_info')
+    teacher_dict={'fname':'','lname':'',
+    'gender':'','title':'','qualification':'','primary_subjet':'','seconday_subject':'','phno':'','email_id':''
+    }
+    print(teacher_dict)
+    for key in teacher_dict.keys():
+        teacher_dict[key]=str(input('enter '+key+': '))
+    print('afert details:',teacher_dict)
+    user_input=tuple((x for x in teacher_dict.values()))
+    print(tp)
+
 
 def view_teacher_info():
     print('in view_teacher_info')
