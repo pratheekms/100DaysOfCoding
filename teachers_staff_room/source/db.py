@@ -32,3 +32,17 @@ def print_table_data(db_conn:mysql.connector)->None:
     print('Printing database records:->')
     for x in myresult:
         print(x)
+
+
+def insert_new_record(db_conn, u_input):
+    sql = "INSERT INTO teachers (first_name, last_name,gender,title,qualification,primary_subject,\
+secondary_subject,contact_number,email_id) VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%s)"
+
+    mycursor = db_conn.cursor()
+    mycursor.execute(sql, u_input)
+    db_conn.commit()
+    print(mycursor.rowcount,"record inserted")
+    mycursor.execute("select LAST_INSERT_ID()")
+    t_id=mycursor.fetchone()
+    print('teacher id is:',t_id[0])
+    return t_id[0]

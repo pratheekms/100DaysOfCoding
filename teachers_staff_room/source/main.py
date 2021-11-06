@@ -16,7 +16,7 @@ def main():
     user_option=int(input('Please select an option: '))
     print('you have selected:'+(operations_list[user_option-1]))
     if user_option==1:
-        add_teacher_info()
+        add_teacher_info(t_db)
     elif user_option==2:
         view_teacher_info()
     elif user_option==3:
@@ -26,17 +26,23 @@ def main():
 
 
 
-def add_teacher_info():
+def add_teacher_info(t_db):
     print('in add_teacher_info')
     teacher_dict={'fname':'','lname':'',
     'gender':'','title':'','qualification':'','primary_subjet':'','seconday_subject':'','phno':'','email_id':''
     }
-    print(teacher_dict)
+    # print(teacher_dict)
     for key in teacher_dict.keys():
         teacher_dict[key]=str(input('enter '+key+': '))
     print('afert details:',teacher_dict)
     user_input=tuple((x for x in teacher_dict.values()))
-    print(tp)
+    new_teacher_id=db.insert_new_record(t_db,user_input)
+    print('printing table data:')
+    db.print_table_data(t_db)
+    print('New teacher {} created with ID: {}.'.format(teacher_dict['fname'],new_teacher_id))
+
+    # print(tp)
+
 
 
 def view_teacher_info():
