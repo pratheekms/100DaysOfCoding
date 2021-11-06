@@ -45,7 +45,7 @@ secondary_subject,contact_number,email_id) VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%
     print(mycursor.rowcount,"record inserted")
     mycursor.execute("select LAST_INSERT_ID()")
     t_id=mycursor.fetchone()
-    print('teacher id is:',t_id[0])
+    # print('teacher id is:',t_id[0])
     return t_id[0]
 
 
