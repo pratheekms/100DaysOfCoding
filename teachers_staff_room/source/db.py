@@ -46,3 +46,37 @@ secondary_subject,contact_number,email_id) VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%
     t_id=mycursor.fetchone()
     print('teacher id is:',t_id[0])
     return t_id[0]
+
+
+def view_teacher_details(db_conn,teacher_id):
+    if validate_teache_id(db_conn,teacher_id):
+        t_id=(teacher_id,)
+        sql="select * from teachers where id=%s"
+        
+        mycursor=db_conn.cursor()
+        mycursor.execute(sql,t_id)
+    
+        fields = map(lambda x:x[0], mycursor.description)
+        result = [dict(zip(fields,row)) for row in mycursor.fetchall()]
+        return result
+    else:
+        return None
+
+
+
+
+
+def validate_teache_id(db_conn,teacher_id):
+    t_id=(teacher_id,)
+    sql="select id from teachers where id=%s"
+    mycursor=db_conn.cursor()
+    mycursor.execute(sql,t_id)
+    record=mycursor.fetchone()
+    row_count=mycursor.rowcount
+    if row_count==0:
+        return False
+    else:
+        return True
+
+
+

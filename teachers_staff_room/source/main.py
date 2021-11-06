@@ -47,6 +47,14 @@ def add_teacher_info(t_db):
 
 def view_teacher_info():
     print('in view_teacher_info')
+    teacher_id=int(input('enter teacher ID: '))
+    teacher_details=db.view_teacher_details(t_db,teacher_id)
+    if teacher_details:
+        print('Teacher Details:')
+        for col,val in teacher_details[0].items():
+            print(col+': '+str(val))
+    else:
+        print('Record does not exists for Teacher ID: {}'.format(teacher_id))
 
 def modify_teacher_info():
     print('in modify_teacher_info')
@@ -55,4 +63,5 @@ def delete_teacher():
     print('in delete_teacher')
 
 if __name__=='__main__':
-    main()
+    # main()
+    view_teacher_info()
